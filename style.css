@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+a {
+    color: white;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 5px;
+    display: inline-block; /* Bloques uno al lado del otro */ 
+    width: 100%;
+    text-align: center;
+}
+
+a:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.toggle {
+    display: none; /* Sin display */ 
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5px 55px;
+}
+
+
+.navegacion ul { /* Navegacion padre -> ul hijo */
+    display: flex; /* Elemento estirable */ 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion li {
+    flex: 1;
+}
+
+@media all and (max-width: 600px) { /* Social no está incluido */ 
+    .wrapper {
+        display: flex;
+        flex-direction: column; /* Cómo colocar los objetos flexibles */ 
+    }
+    .navegacion li {
+        flex-basis: 100%; /* Ver el 100% de los elementos (1) */
+    }
+    .toggle { /* Hacer que el menú solo aparezca en la pantalla de celu */
+        display: block;
+    }
+    .navegacion ul {
+        display: none;
+        flex-wrap: wrap; 
+    }
+    .navegacion ul.open { /* Hacer que el menú solo aparezca en la pantalla de celu */
+        display: flex; 
+    }
+    .navegacion {
+        order: 2; /* Modificar el orden en el que aparecen los elementos */
+    }
+}
